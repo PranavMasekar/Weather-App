@@ -1,18 +1,17 @@
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
-import 'package:geeky_app/Recipe%20app/modal.dart';
-import 'package:geeky_app/Recipe%20app/recipeview.dart';
 import 'package:http/http.dart';
+import 'modal.dart';
+import 'recipeview.dart';
 
-import 'search.dart';
-
-class Home extends StatefulWidget {
+class SearchPage extends StatefulWidget {
+  final String query;
+  SearchPage(this.query);
   @override
-  _HomeState createState() => _HomeState();
+  _SearchPageState createState() => _SearchPageState();
 }
 
-class _HomeState extends State<Home> {
+class _SearchPageState extends State<SearchPage> {
   bool loading = true;
   TextEditingController search = TextEditingController();
 
@@ -41,7 +40,7 @@ class _HomeState extends State<Home> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    getrecipe("chicken");
+    getrecipe(widget.query);
   }
 
   @override
@@ -79,7 +78,7 @@ class _HomeState extends State<Home> {
                               print("Blank Search");
                             } else {
                               print("clicked");
-                              Navigator.push(
+                              Navigator.pushReplacement(
                                   context,
                                   MaterialPageRoute(
                                       builder: (context) =>
@@ -105,25 +104,6 @@ class _HomeState extends State<Home> {
                         ),
                       ],
                     ),
-                  ),
-                ),
-                Container(
-                  padding: EdgeInsets.symmetric(horizontal: 20),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        "What Do You Want To Cook Today ?",
-                        style: TextStyle(fontSize: 28, color: Colors.white),
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Text(
-                        "Let's Cook Something New!!",
-                        style: TextStyle(fontSize: 18, color: Colors.white),
-                      ),
-                    ],
                   ),
                 ),
                 Container(
