@@ -1,8 +1,6 @@
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:geeky_app/Recipe%20app/modal.dart';
-import 'package:geeky_app/Recipe%20app/recipeview.dart';
 import 'package:http/http.dart';
 
 import 'search.dart';
@@ -135,13 +133,7 @@ class _HomeState extends State<Home> {
                           itemCount: recipeList.length,
                           itemBuilder: (context, index) {
                             return InkWell(
-                              onTap: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => RecipeView(
-                                            recipeList[index].appurl)));
-                              },
+                              onTap: () {},
                               child: Card(
                                 margin: EdgeInsets.all(20),
                                 elevation: 0,

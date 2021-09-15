@@ -2,7 +2,6 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart';
 import 'modal.dart';
-import 'recipeview.dart';
 
 class SearchPage extends StatefulWidget {
   final String query;
@@ -115,13 +114,7 @@ class _SearchPageState extends State<SearchPage> {
                           itemCount: recipeList.length,
                           itemBuilder: (context, index) {
                             return InkWell(
-                              onTap: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => RecipeView(
-                                            recipeList[index].appurl)));
-                              },
+                              onTap: () {},
                               child: Card(
                                 margin: EdgeInsets.all(20),
                                 elevation: 0,
