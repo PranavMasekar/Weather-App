@@ -1,4 +1,4 @@
-# geeky_app
+# WeatherApp
 
 A new Flutter project.
 
